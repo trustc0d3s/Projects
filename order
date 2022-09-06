@@ -1,0 +1,154 @@
+//
+//  main.cpp
+//  C++
+//
+//  Created by Trust Mudau on 2022/03/08.
+//
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    int x;
+    cout << "Would you like to order?" << endl;
+    cout << "MENU" << endl;
+    cout << "1) Burger" << endl;
+    cout << "2) Pizza" << endl;
+    cout << "3) Quit" << endl;
+    cout << "Please enter your choice: ";
+    cin >> x;
+    string food;
+    string drink;
+    string flavour;
+    string psize;
+    int price;
+    int size;
+    int flav;
+    int total;
+    int foodq;
+    if(x == 1)
+    {
+        food = "Burger";
+        cout << "1) Chicken R35" << endl;
+        cout << "2) Beef R40" << endl;
+        cout << "3) Vegan R45" << endl;
+        cout << "Please enter your choice (flavour): ";
+        cin >> flav;
+        cout << "Please enter quantity: ";
+        cin >> foodq;
+        if(flav == 1)
+        {
+            flavour = "Chicken ";
+            total = total + (foodq*35);
+            price = 35;
+        }
+        else if (flav == 2)
+        {
+            flavour = "Beef ";
+            total = total + (foodq*40);
+            price = 40;
+        }
+        else if (flav == 3)
+        {
+            flavour = "Vegan ";
+            total = total + (foodq*45);
+            price = 45;
+        }
+    }
+    else if(x == 2 )
+    {
+        food = "Pizza ";
+        cout << "1) Small R25" << endl;
+        cout << "2) Medium R50" << endl;
+        cout << "3) Large R75" << endl;
+        cout << "Please enter your choice: ";
+        cin >> size;
+        cout << "Please enter quantity: ";
+        cin >> foodq;
+        if(size == 1)
+        {
+            psize = "Small ";
+            total = total + (foodq*25);
+            price = 25;
+        }
+        else if (size == 2)
+        {
+            psize = "Medium ";
+            total = total + (foodq*50);
+            price = 50;
+        }
+        else if (size == 3)
+        {
+            psize = "Large ";
+            total = total + (foodq*75);
+            price = 75;
+        }
+        
+    }
+    else
+    {
+        return 0;
+    }
+    
+    
+    string dr = "";
+    cout << "Would you like to order a drink? (yes/no): ";
+    cin >> dr;
+    int dprice = 0;
+    int drinkq = 0;
+    int dchoice;
+    if(dr == "yes")
+    {
+        
+        cout << "1) Cola R10 \n2) Juice R13 \n3) Coffee R16" << endl;
+        cout << "Please enter your choice: ";
+        cin >> dchoice;
+        cout << "Please enter quantity: ";
+        cin >> drinkq;
+        
+    }
+    if(dchoice == 1)
+    {
+        total = total + (10*drinkq);
+        drink = "Cola";
+        dprice = 10;
+    }
+    else if(dchoice == 2)
+    {
+        total = total + (13*drinkq);
+        drink = "Juice";
+        dprice = 13;
+    }
+    else if (dchoice == 3)
+    {
+        total = total + (16*drinkq);
+        drink = "Coffee";
+        dprice = 16;
+    }
+    else if(dr == "no")
+    {
+        
+    }
+
+    cout << "You ordered the following items: " << endl;
+    if (food == "Burger ")
+    {
+    cout << "- " << foodq << " x " << flavour << food << " R" << price << endl;
+    }
+    else
+    {
+        cout << "- " << foodq << " x " << psize << food << " R" << price << endl;
+    }
+    if (dr == "yes")
+    {
+    cout << "- " << drinkq << " x " << drink << " R" << (dprice) << endl;
+    }
+    cout << "You ordered the following items: " << endl;
+    total = foodq * price + drinkq * dprice;
+    cout << "Total = R" << total << endl;
+    cout << "your order will be delivered soon, have a lovely day!" << endl;
+    return 0;
+}
