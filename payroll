@@ -1,0 +1,52 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+//code by TRUST MUDAU
+//structure declaration
+struct EmployeePayRoll
+{
+    string Name;
+    int employeeNumber;
+    double payrate;
+    double hours;
+    double grossPay;
+
+
+};
+int main()
+{
+    //DEfine Struct variables 
+
+    EmployeePayRoll employee1 = {"Betty Ross",141,18.75};
+    EmployeePayRoll employee2 = {"Jill Sandburg", 142,17.50};
+    cout << fixed << showpoint << setprecision(2);
+  
+cout << "Name: ";
+cin >> employee1.Name;
+cout << "Employee Number: ";
+cin >> employee1.employeeNumber;
+cout << "Hours worked by Employee: ";
+cin >> employee1.hours;
+
+employee1.payrate = 18.75;
+employee1.grossPay = employee1.payrate * employee1.hours;
+
+cout << "Employee gross pay: " << employee1.grossPay << endl << endl;
+
+cout << "Name: ";
+cin >> employee2.Name;
+cout << "Employee Number: ";
+cin >> employee2.employeeNumber;
+cout << "Hours worked by Employee: ";
+cin >> employee2.hours;
+
+employee2.payrate = 17.50;
+employee2.grossPay = employee2.payrate * employee2.hours;
+
+cout << "Employee gross pay: " << employee2.grossPay << endl;
+
+return 0;
+
+}
